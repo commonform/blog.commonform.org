@@ -1,0 +1,12 @@
+name: Common Form Blog
+description: open contracting for everyone
+url: https://blog.commonform.org
+logo: /logo-on-white.png
+repository: commonform/blog.commonform.org
+repository_url: "https://github.com/commonform/blog.commonform.org"
+plugins:
+- jekyll-sass-converter
+- jekyll-feed
+exclude:
+- Gemfile
+- Gemfile.lock

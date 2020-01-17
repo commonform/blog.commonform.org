@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <title>{{ site.name }} {{ page.title }}</title>
+    <link rel=stylesheet href=/styles.css type=text/css>
+    <link rel=alternate href=/feed.xml type=application/atom+xml>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    {% if page.title %}
+    <meta name="twitter:title" content="{{page.title}}">
+    {% else %}
+    <meta name="twitter:title" content="{{site.name}}">
+    {% endif %}
+    {% if page.description %}
+    <meta name="twitter:description" content="{{page.description}}">
+    {% else %}
+    <meta name="twitter:description" content="{{site.description}}">
+    {% endif %}
+    <meta name="twitter:image" content="{{site.logo}}">
+    <!-- OpenGraph -->
+    <meta name="og:type" content="website">
+    {% if page.title %}
+    <meta name="og:title" content="{{page.title}}">
+    {% else %}
+    <meta name="og:title" content="{{site.title}}">
+    {% endif %}
+    {% if page.description %}
+    <meta name="og:description" content="{{page.description}}">
+    {% else %}
+    <meta name="og:description" content="{{site.description}}">
+    {% endif %}
+    <meta name="og:image" content="{{site.logo}}">
+  </head>
+  <body>
+    <header role=banner>
+      <a href=/><img id=logo src="{{site.logo}}" alt=logo></a>
+      <h1>{{ site.name | smartify}}</h1>
+      <p>{{ site.description | smartify}}</p>
+      <p>
+        You can
+        <a href="{{site.url}}/feed.xml">subscribe via RSS/Atom</a>.
+      </p>
+    </header>

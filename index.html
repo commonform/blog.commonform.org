@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<ol class=posts>
+{% for post in site.posts %}
+  <li>
+    {% include post.html %}
+  </li>
+{% endfor %}
+</ol>

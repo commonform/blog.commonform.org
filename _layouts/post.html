@@ -1,0 +1,36 @@
+{% include top.html %}
+<article class="body post">
+  {% if page.date %}
+  <p class=dateline>
+    <span class=month>{{ page.date | date: "%B" }}</span>
+    <span class=day>{{ page.date | date: "%e" }}</span>,
+    <span class=year>{{ page.date | date: "%Y" }}</span>
+  </p>
+  {% endif %}
+  <h1 id=title>{{ page.title | smartify}}<small>{{ page.description | smartify }}</small></h1>
+  {% if page.brief %}
+  <aside class="brief" markdown="1">
+    {{ page.brief | markdownify }}
+  </aside>
+  {% endif %}
+  {{ content }}
+  <p class=signature>
+      Your thoughts and feedback are
+      <a href=mailto:kyle@kemitchell.com>always welcome by e-mail</a>.
+  </p>
+  <p class=signature>
+    <a href=/>more articles</a>
+    &mdash;
+    <a href=#title>back to top</a>
+    &mdash;
+    <a href="{{ site.repository_url }}/blob/master/{{ page.path }}">edit on GitHub</a>
+    &mdash;
+    <a href="{{ site.repository_url }}/commits/master/{{ page.path }}">revision history</a>
+  </p>
+</article>
+{% for js in page.js %}
+  <script type=text/javascript>
+    {% include {{ js }} %}
+  </script>
+{% endfor %}
+{% include bottom.html %}
